@@ -1,0 +1,6 @@
+<h2>Review for <%= @restaurant.name %></h2>
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.input :content, hint: "Be nice", placeholder: "A nice vegan place" %>
+  <%= f.input :rating, collection: 0..5, as: :radio_buttons%>
+  <%= f.submit "Submit this review", class: "btn btn-success" %>
+<% end %>
